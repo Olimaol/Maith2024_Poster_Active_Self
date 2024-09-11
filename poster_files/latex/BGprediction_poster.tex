@@ -39,7 +39,7 @@
 	% University logo (eyecatcher)
 	{\includegraphics[height=6.em]{tuckhseng_color}} 
 	% Title
-	{\large\bf{A Neurocomputational Model of Basal Ganglia-Intralaminar Nuclei Interactions: Sense of Agency}\vspace{0.5em}}
+	{\large\bf{A Neurocomputational Model of Basal Ganglia-Intralaminar Nuclei Interactions: Implications for Attentional Orienting and Sense of Agency}\vspace{0.5em}}
 	% Authors
 	{\normalsize Oliver~Maith\textsuperscript{1}, Erik~Syniawa\textsuperscript{1} and Fred~Hamker\textsuperscript{1} \\ \vspace{0.5em}
 		
@@ -64,11 +64,9 @@
 \begin{adjustbox}{minipage=\textwidth, margin=2pt, center}
 
     \centering
-    \begin{minipage}{0.24\textwidth}
+    \begin{minipage}{0.26\textwidth}
         \textbf{Agency:}\\
-        Agency is the feeling of control over our actions and their outcomes.
-        Core requirement = predicting outcomes by internal states
-        Probably cerebellum but the basal ganglia (BG) - intralaminar nuclei (ILN) circuit might also be a potential candidate.\\
+        Agency, our sense of action control, relies on predicting outcomes from internal states. While the cerebellum likely plays a key role, the basal ganglia (BG) - intralaminar nuclei (ILN) circuit may also contribute. The cerebellum potentially enhances agency by generating predictive models, processing error signals, and optimizing timing of motor and cognitive processes \parencite{sendhilnathan2024cerebro}. These functions improve our ability to anticipate action results in BG-ILN loops, reinforcing our sense of agency \parencite{haggard2017sense}.\\
         
         \textbf{BG-ILN connectivity:}\\
         Various BG and ILN regions are strongly interconnected forming loops \parencite{cover_rostral_2021, gonzalo-martin_micropopulation_2024, smith_thalamostriatal_2014}. Thalamo-striatal projections are relevant for behavioral switching, attentional shifting, and reinforcement \parencite{smith_thalamostriatal_2014,cover_activation_2019, cover_rostral_2023}. Particularly the centromedian/parafascicular (CM/Pf) complex also projects to the subthalamic nucleus (STN), external globus pallidus (GPe), and internal globus pallidus/substantia nigra pars reticulata (GPi/SNr) \parencite{gonzalo-martin_micropopulation_2024,castle_thalamic_2005,kita_intralaminar_2016,hanini-daoud_processing_2022}, with branched axons that simultaneously target both the STN and the GPi/SNr. Additionally, the ILN responds to attention-related salient stimuli, suggesting its role in adapting behavior based on prediction errors \parencite{minamimoto_participation_2002,smith_thalamostriatal_2014}.
@@ -86,13 +84,16 @@
         \textbf{Figure 2:} Prediction in the BG-ILN circuit
     \end{minipage}
     \hspace{0.01\textwidth}
-    \begin{minipage}{0.2\textwidth}
+    \begin{minipage}{0.18\textwidth}
         \textbf{Hypotheses:}\\
+        \vfill
         \textit{Functional}
         \begin{itemize}
             \item Modulated by the branched axons from the ILN, the STN-SNr pathway learns to associate internal states with outcomes that may involve internal or external events.
             \item The prediction of an outcome is reflected in increased inhibition of the ILN by the SNr, which diminishes the ILN's response to the corresponding outcomes.
         \end{itemize}
+        \vspace{5pt}
+        
         \textit{General}
         \begin{itemize}
             \item The activity of the ILN represents a kind of prediction error.
@@ -112,11 +113,11 @@
 \begin{adjustbox}{minipage=\textwidth, margin=2pt, center}
  
     \centering
-	\begin{minipage}{0.22\textwidth}
+	\begin{minipage}{0.26\textwidth}
 		\setlist{noitemsep}
 		\textbf{Experimental paradigm} \cite{minamimoto_participation_2002}:
 		\begin{itemize}
-			\item Hold button is illuminated -> monkeys have to hold the illuminated button
+			\item Hold button is illuminated $\rightarrow$ monkeys have to hold the illuminated button
             \item They have to fixate on a central LED throughout the trial
             \item After a random delay (500-1500 ms), one of two large LEDs (left or right) lights up as a cue
             \item At 100, 400, or 700 ms after the cue onset one of the two large LEDs lights up as a target
@@ -150,9 +151,9 @@
         \textbf{Figure 5:} Cues predict targets
 	\end{minipage}
     \hspace{0.01\textwidth}
-	\begin{minipage}{0.22\textwidth}        
+	\begin{minipage}{0.18\textwidth}        
         \textbf{Interpretation with BG-ILN prediction:}\\
-        We propose that the presentation of a cue elicits an internal state, which, through task training, becomes associated with the appearance of a target on the same side via learning within the Cortex->STN->SNr->CM/Pf pathway. Consequently, after training and following valid cues, CM/Pf neurons that would typically respond to the target on the cued side receive increased inhibitory input from the SNr, leading to a diminished response. In contrast, while invalid cues similarly elicit an internal state predicting a target on the cued side, the target appears on the opposite side, and the neurons responding to that side do not experience an increase in inhibition.
+        We propose that the presentation of a cue elicits an internal state, which, through task training, becomes associated with the appearance of a target on the same side via learning within the Cortex$\rightarrow$STN$\rightarrow$SNr$\rightarrow$CM/Pf pathway. Consequently, after training and following valid cues, CM/Pf neurons that would typically respond to the target on the cued side receive increased inhibitory input from the SNr, leading to a diminished response. In contrast, while invalid cues similarly elicit an internal state predicting a target on the cued side, the target appears on the opposite side, and the neurons responding to that side do not experience an increase in inhibition.
 	\end{minipage}
     \hfill
 	
@@ -170,16 +171,17 @@
             \textbf{Figure 6:} Model overview \\
         \end{center}
         \vspace{5pt}
-        - rate-coded neurons \\
-        - neurosimulator ANNarchy \parencite{vitay_annarchy:_2015} \\
+        - neurosimulator ANNarchy \parencite{vitay_annarchy:_2015}, rate-coded neurons \\
         - inputs to the model:
         \setlist{noitemsep}
         \begin{itemize}
             \item at hold, cue, and target light onsets: increase the firing rate of corresponding SC neurons for 50 ms
             \item after hold and cue lights: increase the firing rate of a single cortical neuron belonging to the elicited state for 200 ms (held active as response sequence)
         \end{itemize}
-        - Synaptic plasticity in Cortex->STN->SNr:\\
-        Learning Rule Equation
+        - Synaptic plasticity in Cortex$\rightarrow$STN$\rightarrow$SNr:\\
+        \[
+        \tau \frac{dw}{dt} = \left( trace_{pre} > 0.8 \right)  \left( \text{sign(} r_{pf} - base_{pf} \text{)} - \alpha \right) \left( 1-r_{post} \right)
+        \]
 	\end{minipage}
 		
 \end{adjustbox}
@@ -201,7 +203,7 @@
 	\end{minipage}
     \hspace{0.01\textwidth}
 	\begin{minipage}{0.18\textwidth}
-        Firing rates of the model’s neurons during the cue and target presentation (cue-target interval = 100 ms) in a single trial after learning are shown. At target onset, all three outcomes are activated in this trial. The cue ‘right light’ elicits the state 'cue was right' in the cortex, and in the STN and SNr, neurons associated with the outcome 'right light' exhibit increased firing rates. This illustrates the learned association 'cue was right' -> 'right light'. The Pf responds to excitatory input from the SC, but only when the inhibitory input from the SNr is not increased.
+        Firing rates of the model’s neurons during the cue and target presentation (cue-target interval = 100 ms) in a single trial after learning are shown. At target onset, all three outcomes are activated in this trial. The cue ‘right light’ elicits the state 'cue was right' in the cortex, and in the STN and SNr, neurons associated with the outcome 'right light' exhibit increased firing rates. This illustrates the learned association 'cue was right' $\rightarrow$ 'right light'. The Pf responds to excitatory input from the SC, but only when the inhibitory input from the SNr is not increased.
 	\end{minipage}
     \hspace{0.05\textwidth}
 	\begin{minipage}{0.48\textwidth}  
