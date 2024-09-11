@@ -13,9 +13,9 @@ Authors:
 ## Prerequirements
 * Linux
 * Within conda environment
-* Python >= 3.10
-* CompNeuroPy == 1.0.4
-* ANNarchy == 4.8.1
+* Python>=3.10
+* [CompNeuroPy](https://olimaol.github.io/CompNeuroPy/installation/)==1.0.4
+* [ANNarchy](https://annarchy.github.io/Installation.html)==4.8.1
 
 ## Quick Overview
 * 'core_parameters': all global parameters
