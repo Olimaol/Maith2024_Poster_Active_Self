@@ -1,0 +1,96 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lit 
+\usepackage[backend=biber, 
+			style=ieee,
+			url=false, 
+			doi=true]{biblatex}
+			
+\addbibresource{refs.bib} % References path
+\AtBeginBibliography{\tiny} % font size for references
+\setlength{\bibitemsep}{0.5pt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Image 
+\usepackage{graphicx}
+\graphicspath{{logos/}{figures/}} % paths for images
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Color Settings
+\usepackage{xcolor}
+\definecolor{iftucfont}{RGB}{74,130,70}
+\definecolor{iftuccolor}{RGB}{143,168,92}
+\definecolor{iftucbackground}{RGB}{241,244,234}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Font Settings
+\usepackage[sfdefault, regular]{roboto}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Layout  Settings
+%% Allow multicolumns
+\usepackage{multicol}
+\setlength{\columnsep}{1.5em}
+\setlength{\columnseprule}{0mm}
+
+%% Row Settings
+\usepackage{setspace}% for \onehalfspacing
+\usepackage{parskip}
+
+%% Control layout of itemize, enumerate, description
+\usepackage{enumitem}
+
+% page borders and header height
+\usepackage{geometry}
+\geometry{
+	left=35pt,
+	right=5pt,
+	top=10pt
+}
+
+\newcommand{\compresslist}{% Define a command to reduce spacing within itemize/enumerate environments, e.g. \begin{itemize}\compresslist
+			\setlength{\itemsep}{1pt}
+			\setlength{\parskip}{0pt}
+			\setlength{\parsep}{0pt}
+		}
+	
+\newcommand{\compressbib}{%
+		\setlength{\itemsep}{0pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table and figure settings
+\usepackage{float, booktabs,array}
+
+% Adjust row width in tables 
+\renewcommand{\arraystretch}{1.2}
+
+% for awesome plots and tables from files like .csv
+\usepackage{pgfplots}\pgfplotsset{compat=newest}
+\usepackage{pgfplotstable}
+
+% Graphics package-alike macros for “general” boxes. Like resizing figures and aligning minipages
+\usepackage{adjustbox}
+
+% Add captions to your table or figure
+\usepackage[
+font=small,
+labelfont=bf,
+%labelfont=sc, %Kapitälchen, passt nicht wg. nicht-osf Ziffern
+%%%%labelfont=it, %italics, 
+%%%labelfont=sl, %slanted,
+hypcap=true,
+format=hang,
+%margin={2cm,2cm}
+width=0.8\linewidth
+]{caption}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Other packages
+% to help with long equations
+\usepackage{amsmath}
+
+% for todo notes
+\usepackage{todonotes} 
+
+% for comment blocks
+\usepackage{verbatim}
+
+% link URLs
+\usepackage{url}
+
+% dummy text 
+\usepackage{lipsum}
